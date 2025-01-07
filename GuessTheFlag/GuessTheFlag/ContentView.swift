@@ -8,9 +8,42 @@
 import SwiftUI
 
 struct ContentView: View {
+    var val = 0.85
     var body: some View {
-        VStack {
+        ZStack {
+            VStack {
+                Text("Hey!")
+                Button("Delete Selection", action: executeDelete)
+            }
+            .padding(50)
+            .foregroundStyle(.white)
+            .background(.red.gradient)
             
+            VStack {
+                LinearGradient(colors: [Color(red: 1, green: val, blue: val),.orange,.red,.pink], startPoint: .topLeading, endPoint: .bottomTrailing)
+                AngularGradient(colors: [.red,.yellow,.green,.blue,.purple], center: .bottom)
+            }
+            .zIndex(-1)
+        }
+    }
+}
+
+func executeDelete() {
+    print("clicked")
+}
+
+struct pokeBallView: View {
+    var body: some View {
+        ZStack {
+            VStack {
+                Color.red
+                Color.blue
+            }
+            
+            Text("Your content")
+                .foregroundStyle(.secondary)
+                .padding(50)
+                .background(.ultraThinMaterial)
         }
     }
 }
