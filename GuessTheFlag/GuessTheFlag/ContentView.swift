@@ -8,16 +8,85 @@
 import SwiftUI
 
 struct ContentView: View {
+    var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "Ukraine", "US"]
+    var correctAnswer = Int.random(in: 0...2)
+    
+    var body: some View {
+        ZStack {
+            VStack (spacing: 30) {
+                VStack {
+                    Text("Tap the flag of")
+                        .font(.subheadline.weight(.heavy))
+                    Text(countries[correctAnswer])
+                        .font(.largeTitle.weight(.semibold))
+                }
+                
+                ForEach(0..<3) { number in
+                    Button {
+                        // flag tapped
+                    } label: {
+                        Image(countries[number])
+                            .clipShape(.capsule)
+                            .shadow(radius: 5)
+                    }
+                }
+                .padding(2)
+                .background(.white)
+                .clipShape(.capsule)
+                .shadow(radius: 5)
+            }
+            LinearGradient(colors: [.blue,.black], startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
+                .zIndex(-1)
+        }
+    }
+    
+}
+
+struct ButtonTesting: View {
     var val = 0.85
+    @State private var showingAlert = false
+    
     var body: some View {
         ZStack {
             VStack {
                 Text("Hey!")
-                Button("Delete Selection", action: executeDelete)
+                VStack {
+                    Button("Show Alert") {
+                        showingAlert =  true
+                    }
+                    .buttonStyle(.bordered)
+                    .alert("Something imp", isPresented: $showingAlert, actions: {
+                        Button("OK") {
+                            
+                        }
+                        Button("delete", role: .destructive) {}
+                        Button("cancel", role: .cancel) {}
+                    }, message: {
+                        Text("This converys some extra information to the user")
+                    })
+                    
+                    Button("Button 2", role: .destructive) { }
+                        .buttonStyle(.bordered)
+                    Button("Button 3") { }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.mint)
+                    Button("Button 4", role: .destructive) { }
+                        .buttonStyle(.borderedProminent)
+                    
+                    Button {
+                        print("Button with trailing closure tapped")
+                    } label: {
+                        Label("Edit Lsbrl", systemImage: "pencil")
+                            .padding()
+                            .foregroundStyle(.white)
+                            .background(.red)
+                    }
+                }
             }
             .padding(50)
             .foregroundStyle(.white)
-            .background(.red.gradient)
+            .background(.blue.gradient)
             
             VStack {
                 LinearGradient(colors: [Color(red: 1, green: val, blue: val),.orange,.red,.pink], startPoint: .topLeading, endPoint: .bottomTrailing)
