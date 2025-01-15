@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		765260162D36E79E008C2351 /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = 765260152D36E79E008C2351 /* astronauts.json */; };
+		765260182D36E7A4008C2351 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = 765260172D36E7A4008C2351 /* missions.json */; };
 		76DD95D52D36721F00354C86 /* ScrollViewsAndCodableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DD95D42D36721F00354C86 /* ScrollViewsAndCodableApp.swift */; };
 		76DD95D72D36721F00354C86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DD95D62D36721F00354C86 /* ContentView.swift */; };
 		76DD95D92D36722000354C86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76DD95D82D36722000354C86 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		765260152D36E79E008C2351 /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
+		765260172D36E7A4008C2351 /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
 		76DD95D12D36721F00354C86 /* ScrollViewsAndCodable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollViewsAndCodable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76DD95D42D36721F00354C86 /* ScrollViewsAndCodableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewsAndCodableApp.swift; sourceTree = "<group>"; };
 		76DD95D62D36721F00354C86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 		76DD95D32D36721F00354C86 /* ScrollViewsAndCodable */ = {
 			isa = PBXGroup;
 			children = (
+				765260152D36E79E008C2351 /* astronauts.json */,
+				765260172D36E7A4008C2351 /* missions.json */,
 				76DD95D42D36721F00354C86 /* ScrollViewsAndCodableApp.swift */,
 				76DD95D62D36721F00354C86 /* ContentView.swift */,
 				76DD95D82D36722000354C86 /* Assets.xcassets */,
@@ -115,6 +121,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				76DD95D92D36722000354C86 /* Assets.xcassets in Resources */,
+				765260182D36E7A4008C2351 /* missions.json in Resources */,
+				765260162D36E79E008C2351 /* astronauts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
