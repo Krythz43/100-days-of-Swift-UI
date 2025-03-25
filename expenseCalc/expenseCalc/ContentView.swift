@@ -19,13 +19,13 @@ class Expenses {
     var items = [ExpenseItem]() {
         didSet {
             if let encoded = try? JSONEncoder().encode(items) {
-                UserDefaults.standard.set(encoded, forKey: "items")
+                UserDefaults.standard.set(encoded, forKey: "profileItems")
             }
         }
     }
     
     init() {
-        if let savedItems = UserDefaults.standard.data(forKey: "items") {
+        if let savedItems = UserDefaults.standard.data(forKey: "profileItems") {
             if let decodedItems = try? JSONDecoder().decode([ExpenseItem].self, from: savedItems) {
                 items = decodedItems
                 return
